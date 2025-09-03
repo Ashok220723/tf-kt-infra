@@ -42,8 +42,6 @@ It includes modules for **Networking, Security, Database, EKS Cluster, Node Grou
 │       └── variables.tf
 ├── outputs.tf
 ├── providers.tf
-├── terraform.tfstate
-├── terraform.tfstate.backup
 ├── variables.tf
 └── versions.tf
 ```
