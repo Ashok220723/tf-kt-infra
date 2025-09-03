@@ -85,3 +85,46 @@ variable "extra_tags" {
   type    = map(string)
   default = {}
 }
+
+
+
+variable "cluster_name" {
+  type        = string
+  description = "EKS cluster name"
+}
+
+variable "desired_size" {
+  type        = number
+  description = "Desired number of nodes"
+}
+
+variable "min_size" {
+  type        = number
+  description = "Minimum number of nodes"
+}
+
+variable "max_size" {
+  type        = number
+  description = "Maximum number of nodes"
+}
+
+variable "instance_types" {
+  type        = list(string)
+  description = "Instance types for node groups"
+}
+
+variable "eks_version" {
+  type        = string
+  default     = "1.30"
+  description = "Kubernetes version for the EKS cluster"
+}
+
+variable "eks_private_subnet_cidrs" {
+  type        = list(string)
+  description = "CIDR blocks for private EKS subnets"
+}
+
+variable "eks_public_subnet_cidrs" {
+  type        = list(string)
+  description = "CIDR blocks for public EKS subnets (for ALBs/NLBs)"
+}

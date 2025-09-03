@@ -21,13 +21,13 @@ app_min           = 3
 app_max           = 6
 app_instance_type = "t3.medium"
 
-rds_engine_version   = "8.0"
-rds_instance_class   = "db.t3.medium"
-rds_multi_az         = true
+rds_engine_version    = "8.0"
+rds_instance_class    = "db.t3.medium"
+rds_multi_az          = true
 rds_allocated_storage = 100
 
 extra_tags = {
-  Owner = "platform-team"
-  Stage = "prod"
+  Owner       = "platform-team"
+  Stage       = "prod"
   Criticality = "high"
 }

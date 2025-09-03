@@ -1,4 +1,4 @@
-project     = "dev-vpc-01"
+project     = "kt"
 environment = "dev"
 aws_region  = "ap-south-1"
 
@@ -16,6 +16,22 @@ db_subnet_cidrs = ["10.0.48.0/20", "10.0.64.0/20"]
 
 nat_mode = "per_az"
 
+
+# EKS private subnets for nodes
+eks_private_subnet_cidrs = ["10.0.80.0/20", "10.0.96.0/20"]
+
+# EKS public subnets for ALBs
+eks_public_subnet_cidrs  = ["10.0.120.0/24", "10.0.121.0/24"]
+
+cluster_name = "dev-kt-eks"
+desired_size   = 2
+min_size       = 1
+max_size       = 3
+instance_types = ["t3.medium"]
+eks_version    = "1.31"
+
+
+
 app_desired       = 2
 app_min           = 2
 app_max           = 4
@@ -27,6 +43,6 @@ rds_multi_az         = false
 rds_allocated_storage = 20
 
 extra_tags = {
-  Owner = "platform-team"
+  Owner = "kt-platform-team"
   Stage = "dev"
 }

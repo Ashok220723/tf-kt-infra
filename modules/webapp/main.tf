@@ -1,7 +1,10 @@
 data "aws_ami" "al2023" {
   most_recent = true
   owners      = ["137112412989"]
-  filter { name = "name" values = ["al2023-ami-*-x86_64"] }
+  filter {
+    name   = "name"
+    values = ["al2023-ami-*-x86_64"]
+  }
 }
 
 resource "aws_lb" "this" {
@@ -39,7 +42,7 @@ resource "aws_lb_listener" "http" {
 resource "aws_iam_role" "ec2" {
   name = "webapp-ec2-role"
   assume_role_policy = jsonencode({
-    Version = "2012-10-17",
+    Version   = "2012-10-17",
     Statement = [{ Effect = "Allow", Principal = { Service = "ec2.amazonaws.com" }, Action = "sts:AssumeRole" }]
   })
 }
